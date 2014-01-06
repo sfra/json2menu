@@ -1,0 +1,22 @@
+li.hasChildren {
+    background-color: #223344;
+    color: #cfcfcf;
+    border: 1px solid #aabbcc;
+    width: 300px;
+
+}
+
+li.noChildren {
+    background-color: #667788;
+    color: #0f0f0f;
+}
+
+li {
+    background-color: #667788;
+    max-width: 300px;
+}
+
+li ul {
+    max-width: 300px;
+}
+

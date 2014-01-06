@@ -1,0 +1,53 @@
+[
+    {"text":"content0","children":
+                                    [
+                                        {"text":"content00","click":""},
+                                        {"text":"content01","click":""},
+                                        {"text":"content02","click":""}
+                                    ]
+    },
+    {"text":"content1","children":
+    
+                                    [
+                                        {"text":"content10", "children":
+                                            [
+                                                {"text":"content101","click":""},
+                                                {"text":"content102","click":""}
+                                            
+                                            ]
+                                        },
+                                        {"text":"content11","click":""},
+                                        {"text":"content12", "children":
+                                            [
+                                                {"text":"content121","click":""},
+                                                {"text":"content122","children":
+                                                    [
+                                                        {"text":"content1220","click":""},
+                                                        {"text":"content1221","click":""},
+                                                        {"text":"content1222","click":""},
+                                                        {"text":"content1223","click":""}
+                                                    ]
+                                                }
+                                            
+                                            ]
+                                        }
+                                    ]
+    
+    },
+    {"text":"content2","children":
+    
+                                    [
+                                        {"text":"content20", "children":
+                                            [
+                                                {"text":"content201","click":""},
+                                                {"text":"content202","click":""}
+                                            
+                                            ]
+                                        
+                                        },
+                                        {"text":"content21","click":""},
+                                        {"text":"content22","click":""}
+                                    ]
+    
+    }
+]
