@@ -25,6 +25,11 @@ $.fn.menu=function(options){
                   
                }
                
+               console.log(jsonCode[i].click);
+               if (jsonCode[i].click!=undefined) {
+                  console.log(jsonCode[i].click);
+               }
+               
             
             $LI.text(jsonCode[i].text);
             fillLI(jsonCode[i],$LI);
@@ -68,7 +73,7 @@ $.fn.menu=function(options){
   
   
   
-  $.getJSON("http://localhost/menu/menu.json",function(data){
+  $.getJSON("http://localhost/json2menu/menu.json",function(data){
 
 //    console.log(data[0].click);  
         fillUL(data,$("ul"));

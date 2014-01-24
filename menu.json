@@ -1,9 +1,9 @@
 [
     {"text":"content0","children":
                                     [
-                                        {"text":"content00","click":""},
-                                        {"text":"content01","click":""},
-                                        {"text":"content02","click":""}
+                                        {"text":"content00","click":"1ss"},
+                                        {"text":"content01","click":"2ss"},
+                                        {"text":"content02","click":"3ss"}
                                     ]
     },
     {"text":"content1","children":
