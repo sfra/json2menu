@@ -11,9 +11,10 @@ $.fn.menu=function(options){
    var fillUL=function(jsonCode,dest){
    //  debugger; 
      
-//     dest.html("AAAA"); 
+//     dest.html("AAAA");
+      var i=0;
      if (jsonCode instanceof Array) {
-         for (var i=0;i<jsonCode.length; i++  ) {
+         for (i = 0;i<jsonCode.length; i+=1  ) {
             var $LI=$("<li></li>");
             $LI.find("*").css({"display":"none"});
             
@@ -40,11 +41,11 @@ $.fn.menu=function(options){
      
       
 
-    }
+    };
     
     
     var fillLI=function(jsonCode,dest){
-      if (typeof jsonCode=="object") {
+      if (typeof jsonCode==="object") {
          if (jsonCode.children!=undefined) {
             
             
@@ -59,7 +60,7 @@ $.fn.menu=function(options){
          }
       }
       
-    }
+    };
     
     
   
@@ -88,8 +89,8 @@ $.fn.menu.defaults={
    openSpeed: 500,
    openbg: "#777777",
    mouseoutOpacity: 0.7,
-   mouseOut: {"opacity":.7},
-   openProp: {"speed":500,"css":{"opacity":.7},"background-color":"#777777"}
+   mouseOut: {"opacity":0.7},
+   openProp: {"speed":500,"css":{"opacity":0.7},"background-color":"#777777"}
    
 }
 
