@@ -1,23 +1,66 @@
-ul {
+  ul {
   cursor: pointer;
-  
+  list-style-type: none;
+font-family: 'K2D', 'Arial', sans-serif;
 }
 
-li.hasChildren {
+a {
+  text-decoration: none;
+  color: #223344;
+}
+
+ul ul{
+  padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  width: 90%;
+background-color: #223344
+}
+
+ul  li {
+  display: block;
+
+  padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+  width: 86%;
+  background-color: #223344;
+  margin: 0px !important;
+}
+
+ul li div {
+  padding: 10px;
+  width: 80%;
+
+}
+li.hasChildren div {
     background-color: #223344;
-    color: #cfcfcf;
+    color: #CBE5FF;
     border: 1px solid #aabbcc;
-    width: 300px;
 
 }
 
-li.noChildren {
-    background-color: #667788;
-    color: #0f0f0f;
+li.hasChildren:hover > div {
+      transition: all .5s ease-in;
+  color: #223344;
+  background-color: #CBE5FF;
+}
+
+li.noChildren > div {
+    background-color: #748290;
+    color: #7EBDFC;
+}
+
+
+li.noChildren:hover > div {
+    transition: all .5s ease-in;
+    color: #748290;
+    background-color: #7EBDFC;
 }
 
 li {
-    background-color: #667788;
+    background-color: #6ea6dd;
     max-width: 300px;
 }
 

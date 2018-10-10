@@ -3,60 +3,68 @@
   $.fn.menu = function(options) {
 
 
-    let fillUL = function(jsonCode, dest) {
+    let fillUL = function(jsonCode, dest,depth) {
 
-      let i = 0, $a=null;
+      let i = 0, $a=null,$div;
       if (jsonCode instanceof Array) {
         for (i = 0; i < jsonCode.length; i += 1) {
-          let $LI = $("<li></li>");
+          let $LI = $('<li></li>');
 
-          $LI.find("*:not(a)").css({
-            "display": "none"
+          $LI.find('*:not(a):not(div)').css({
+            'display': 'none'
           });
 
 
           if (jsonCode[i].children !== undefined) {
-            $LI.addClass("hasChildren");
+            $LI.addClass('hasChildren');
           } else {
-            $LI.addClass("noChildren");
+            $LI.addClass('noChildren');
           }
 
 
 
+          $div=$('<div></div>');
+          $div.css({
+            transform: `translateX(${Math.log(depth)*40}px)`
+          });
 
           if(typeof jsonCode[i].click!=='undefined') {
                   $a=$('<a></a>');
-                  $a.attr('href',jsonCode[i].click)
+                  $a.attr('href',jsonCode[i].click);
+                  $a.attr('target','_blank');
                   $a.text(jsonCode[i].text);
-                  $LI.append($a);
+                  $div.append($a);
+                  $LI.append($div);
 
 
           } else {
-              $LI.text(jsonCode[i].text);
+
+              $div.text(jsonCode[i].text);
+              $LI.append($div);
           }
 
-          fillLI(jsonCode[i], $LI);
+          fillLI(jsonCode[i], $LI, depth);
           dest.append($LI);
         }
       }
     };
 
 
-    let fillLI = function(jsonCode, dest) {
-      if (typeof jsonCode === "object") {
+    let fillLI = function(jsonCode, dest, depth) {
+      if (typeof jsonCode === 'object') {
         if (jsonCode.children != undefined) {
 
-          dest.on("click", function(e) {
-            $(this).children("*").fadeIn().children().fadeIn();
-            $(this).siblings("li").find("*:not(a)").fadeOut();
+          dest.on('click', function(e) {
+            $(this).children('*').fadeIn().children().fadeIn();
+            $(this).siblings('li').find('*:not(a):not(div)').fadeOut();
           });
-          let $UL = $("<ul></ul>").css({
-            "display": "none"
+          let $UL = $('<ul></ul>').css({
+            'display': 'none'
           });
-          $UL.find("*:not(a)").css({
-            "display": "none"
+          $UL.find('*:not(a):not(div)').css({
+            'display': 'none'
           });
-          fillUL(jsonCode.children, $UL);
+          fillUL(jsonCode.children, $UL,depth+1);
           dest.append($UL);
         }
       }
@@ -65,8 +73,8 @@
 
     let opt = $.extend({}, $.fn.menu.defaults, options);
 
-    $.getJSON("menu.json", function(data) {
-      fillUL(data, $("ul"));
+    $.getJSON('menu.json', function(data) {
+      fillUL(data, $('ul'),1);
     });
     return this;
   }
@@ -74,17 +82,17 @@
   $.fn.menu.defaults = {
     enlarge: $.fn.fadeTo,
     openSpeed: 500,
-    openbg: "#777777",
+    openbg: '#777777',
     mouseoutOpacity: 0.7,
     mouseOut: {
-      "opacity": 0.7
+      'opacity': 0.7
     },
     openProp: {
-      "speed": 500,
-      "css": {
-        "opacity": 0.7
+      'speed': 500,
+      'css': {
+        'opacity': 0.7
       },
-      "background-color": "#777777"
+      'background-color': '#777777'
     }
   }
 
