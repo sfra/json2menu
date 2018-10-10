@@ -3,23 +3,38 @@
   $.fn.menu = function(options) {
 
 
-    var fillUL = function(jsonCode, dest) {
+    let fillUL = function(jsonCode, dest) {
 
-      var i = 0;
+      let i = 0, $a=null;
       if (jsonCode instanceof Array) {
         for (i = 0; i < jsonCode.length; i += 1) {
-          var $LI = $("<li></li>");
-          $LI.find("*").css({
+          let $LI = $("<li></li>");
+
+          $LI.find("*:not(a)").css({
             "display": "none"
           });
 
-          if (jsonCode[i].children != undefined) {
+
+          if (jsonCode[i].children !== undefined) {
             $LI.addClass("hasChildren");
           } else {
             $LI.addClass("noChildren");
           }
 
-          $LI.text(jsonCode[i].text);
+
+
+
+          if(typeof jsonCode[i].click!=='undefined') {
+                  $a=$('<a></a>');
+                  $a.attr('href',jsonCode[i].click)
+                  $a.text(jsonCode[i].text);
+                  $LI.append($a);
+
+
+          } else {
+              $LI.text(jsonCode[i].text);
+          }
+
           fillLI(jsonCode[i], $LI);
           dest.append($LI);
         }
@@ -27,18 +42,18 @@
     };
 
 
-    var fillLI = function(jsonCode, dest) {
+    let fillLI = function(jsonCode, dest) {
       if (typeof jsonCode === "object") {
         if (jsonCode.children != undefined) {
 
           dest.on("click", function(e) {
             $(this).children("*").fadeIn().children().fadeIn();
-            $(this).siblings("li").find("*").fadeOut();
+            $(this).siblings("li").find("*:not(a)").fadeOut();
           });
-          var $UL = $("<ul></ul>").css({
+          let $UL = $("<ul></ul>").css({
             "display": "none"
           });
-          $UL.find("*").css({
+          $UL.find("*:not(a)").css({
             "display": "none"
           });
           fillUL(jsonCode.children, $UL);
@@ -48,7 +63,7 @@
     };
 
 
-    var opt = $.extend({}, $.fn.menu.defaults, options);
+    let opt = $.extend({}, $.fn.menu.defaults, options);
 
     $.getJSON("menu.json", function(data) {
       fillUL(data, $("ul"));

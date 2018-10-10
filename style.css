@@ -1,3 +1,8 @@
+ul {
+  cursor: pointer;
+  
+}
+
 li.hasChildren {
     background-color: #223344;
     color: #cfcfcf;
@@ -19,4 +24,3 @@ li {
 li ul {
     max-width: 300px;
 }
-

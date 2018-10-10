@@ -1,53 +1,50 @@
 [
-    {"text":"content0","children":
+    {"text":"This is multi level menu demo","children":
                                     [
-                                        {"text":"content00","click":"1ss"},
-                                        {"text":"content01","click":"2ss"},
-                                        {"text":"content02","click":"3ss"}
+                                        {"text":"The page of the project","click":"https://github.com/sfra/json2menu"},
+                                        {"text":"Read me","click":"https://github.com/sfra/json2menu/blob/master/README.md"},
+                                        {"text":"License","click":"https://github.com/sfra/json2menu/blob/master/LICENSE"}
                                     ]
     },
-    {"text":"content1","children":
-    
+    {"text":"Used technologies","children":
+
                                     [
-                                        {"text":"content10", "children":
+                                        {"text":"jquery", "children":
                                             [
-                                                {"text":"content101","click":""},
-                                                {"text":"content102","click":""}
-                                            
+                                                {"text":"js library"},
+                                                {"text":"version  3.3.1"}
+
                                             ]
                                         },
-                                        {"text":"content11","click":""},
-                                        {"text":"content12", "children":
+                                        {"text":"json"},
+                                        {"text":"ajax", "children":
                                             [
-                                                {"text":"content121","click":""},
-                                                {"text":"content122","children":
+                                                {"text":"ajax on wikipedia","click":"https://pl.wikipedia.org/wiki/AJAX"},
+                                                {"text":"ajax on google","children":
                                                     [
-                                                        {"text":"content1220","click":""},
-                                                        {"text":"content1221","click":""},
-                                                        {"text":"content1222","click":""},
-                                                        {"text":"content1223","click":""}
+                                                        {"text":"ajax programming","click":"https://en.wikipedia.org/wiki/Ajax_(programming)"},
+                                                        {"text":"ajax course (in polish)","click":"http://kursjs.pl/kurs/ajax/ajax.php"},
+                                                        {"text":"ajax in jquery","click":"https://api.jquery.com/category/ajax/"}
                                                     ]
                                                 }
-                                            
+
                                             ]
                                         }
                                     ]
-    
+
     },
-    {"text":"content2","children":
-    
+    {"text":"author","children":
+
                                     [
-                                        {"text":"content20", "children":
+                                        {"text":"Szymon Frankowski", "children":
                                             [
-                                                {"text":"content201","click":""},
-                                                {"text":"content202","click":""}
-                                            
+                                                {"text":"webpage","click":"https://github.com/sfra"}
+
                                             ]
-                                        
+
                                         },
-                                        {"text":"content21","click":""},
-                                        {"text":"content22","click":""}
+                                        {"text":"other projects","click":"https://github.com/sfra?tab=repositories"}
                                     ]
-    
+
     }
 ]

@@ -1,0 +1,25 @@
+{
+  "name": "json2menu",
+  "homepage": "https://github.com/sfra/json2menu",
+  "authors": [
+    "Szymon Frankowski <sz.frankyy@gmail.com>"
+  ],
+  "description": "json2menu is simple jQuery plugin converting json data into html menu based on unordered list.",
+  "main": "index.html",
+  "keywords": [
+    "jquery",
+    "plugin",
+    "menu"
+  ],
+  "license": "GPL-3.0-only",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
