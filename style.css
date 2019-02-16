@@ -34,26 +34,26 @@ ul li div {
   width: 80%;
 
 }
-li.hasChildren div {
+li.menu-plugin-has-children div {
     background-color: #223344;
     color: #CBE5FF;
     border: 1px solid #aabbcc;
 
 }
 
-li.hasChildren:hover > div {
+li.menu-plugin-has-children:hover > div {
       transition: all .5s ease-in;
   color: #223344;
   background-color: #CBE5FF;
 }
 
-li.noChildren > div {
+li.menu-plugin-no-children > div {
     background-color: #748290;
     color: #7EBDFC;
 }
 
 
-li.noChildren:hover > div {
+li.menu-plugin-no-children:hover > div {
     transition: all .5s ease-in;
     color: #748290;
     background-color: #7EBDFC;
